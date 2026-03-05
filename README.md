@@ -265,18 +265,10 @@ yum install jq
    kubectl auth can-i create volumesnapshot
    ```
 
-### 삭제确认 안，求助
+### 삭제시 안전장치
 
 `--dry-run` 옵션으로 먼저 확인하세요:
 
 ```bash
 ./nks-snapshot-delete.sh --expired --dry-run
 ```
-
-## License
-
-MIT License
-
-## Contributing
-
-Pull Request 환영합니다!
