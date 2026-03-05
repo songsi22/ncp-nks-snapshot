@@ -32,7 +32,7 @@ NKS 클러스터의 PersistentVolumeClaim(PVC)을 VolumeSnapshot으로 백업하
 ## Requirements
 
 - **kubectl**: Kubernetes 클러스터 접근 가능해야 합니다.
-- **jq**: Bash 스크립트 사용 시 필수 (macOS: `brew install jq`, Linux: `apt-get install jq`)
+- **jq**: Bash 스크립트 사용 시 필수 (macOS: `brew install jq`, Linux: `apt-get install jq` or `yum install jq` )
 - **PowerShell**: Windows 환경에서만 필요
 
 ## Quick Start
