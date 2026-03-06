@@ -9,6 +9,10 @@ param(
     [string]$ConfigFile = "config.json"
 )
 
+if (-not [System.IO.Path]::IsPathRooted($ConfigFile)) {
+    $ConfigFile = Join-Path -Path $PSScriptRoot -ChildPath $ConfigFile
+}
+
 $ErrorActionPreference = "Continue"
 
 function Get-ServerVersion {
