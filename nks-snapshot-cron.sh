@@ -30,6 +30,11 @@ load_config() {
   jq -e . "$CONFIG_FILE" >/dev/null 2>&1
 }
 
+check_deps() {
+  command -v kubectl >/dev/null 2>&1 || return 1
+  command -v jq >/dev/null 2>&1 || return 1
+}
+
 setup_kube_env() {
   if [[ -z "${KUBECONFIG:-}" ]]; then
     if [[ -f "$SCRIPT_DIR/kubeconfig" ]]; then

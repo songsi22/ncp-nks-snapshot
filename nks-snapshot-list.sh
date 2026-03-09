@@ -19,8 +19,12 @@ if [[ ! "$CONFIG_FILE" =~ ^([A-Za-z]:[\\/]|/) ]]; then
   CONFIG_FILE="$SCRIPT_DIR/$CONFIG_FILE"
 fi
 
-command -v kubectl >/dev/null || { echo "kubectl required"; exit 1; }
-command -v jq >/dev/null || { echo "jq required"; exit 1; }
+check_deps() {
+  command -v kubectl >/dev/null 2>&1 || return 1
+  command -v jq >/dev/null 2>&1 || return 1
+}
+
+check_deps || { echo "kubectl/jq required"; exit 1; }
 
 get_nks_version() {
   local sv
