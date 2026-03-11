@@ -163,7 +163,7 @@ crontab -e
 # 특정 이름으로 삭제
 .\nks-snapshot-delete.ps1 -Name "snapshot-data-20260305120000"
 
-# 기간范围内 삭제
+# 기간 지정 삭제
 .\nks-snapshot-delete.ps1 -From "2026-03-01T00:00:00Z" -To "2026-03-05T23:59:59Z"
 
 # 만료된 스냅샷만 삭제 (config.json의 retention_days 기준)
@@ -183,7 +183,7 @@ crontab -e
 # 특정 이름으로 삭제
 ./nks-snapshot-delete.sh --name "snapshot-data-20260305120000"
 
-# 기간范围内 삭제
+# 기간 지정 삭제
 ./nks-snapshot-delete.sh --from "2026-03-01T00:00:00Z" --to "2026-03-05T23:59:59Z"
 
 # 만료된 스냅샷만 삭제
