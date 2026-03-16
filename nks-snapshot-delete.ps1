@@ -98,7 +98,7 @@ function Parse-Selection {
   if ([string]::IsNullOrWhiteSpace($InputText)) { return @() }
   if ($InputText.Trim().ToLower() -eq "all") {
     1..$MaxIndex | ForEach-Object { [void]$result.Add($_) }
-    return $result.ToArray() | Sort-Object
+    return @($result | Sort-Object)
   }
 
   foreach ($token in ($InputText -split ",")) {
@@ -115,7 +115,7 @@ function Parse-Selection {
       if ($idx -ge 1 -and $idx -le $MaxIndex) { [void]$result.Add($idx) }
     }
   }
-  return $result.ToArray() | Sort-Object
+  return @($result | Sort-Object)
 }
 
 $candidates = @()
