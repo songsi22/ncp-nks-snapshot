@@ -124,5 +124,6 @@ spec:
     persistentVolumeClaimName: $p
 EOF
     echo "created: $name"
+    sleep 10
   done
 done

@@ -87,6 +87,7 @@ spec:
   source:
     persistentVolumeClaimName: $p
 "@ | kubectl apply -f - | Out-Null
+    Start-Sleep -Seconds 10
     Write-Host "created: $name"
   }
 }

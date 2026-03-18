@@ -211,6 +211,7 @@ EOF
       echo "[FAIL][CREATE][DETAIL] $apply_output" >&2
       ((f++))
     fi
+    sleep 10
   done
   echo "$s $f"
 }

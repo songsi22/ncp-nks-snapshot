@@ -114,6 +114,7 @@ spec:
     persistentVolumeClaimName: $pvcName
 "@
         $yamlContent | kubectl apply -f - 2>$null | Out-Null
+        Start-Sleep -Seconds 10
         if ($LASTEXITCODE -eq 0) { $successCount++ } else { $failCount++ }
     }
     return @{ Success = $successCount; Fail = $failCount }
